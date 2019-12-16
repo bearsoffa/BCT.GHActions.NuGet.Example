@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install nuget
-      run: apt install nuget
+      run: sudo apt install nuget
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
