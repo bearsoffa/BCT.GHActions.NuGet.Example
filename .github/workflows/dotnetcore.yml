@@ -18,6 +18,14 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
       working-directory: ./src
-    - name: Add nuget
+    - name: Add Artifactory nuget
       run: nuget sources Add -Name Artifactory -Source https://tbctdevops.jfrog.io/tbctdevops/api/nuget/nuget -username ${{ secrets.artifactory_username }} -password ${{ secrets.artifactory_password }}
       working-directory: ./src
+    - name: Set Artifactory nuget API key
+      run: nuget setapikey ${{ secrets.artifactory_username }}:${{ secrets.artifactory_password }} -Source Artifactory
+      working-directory: ./src
+    - name: Pack with dotnet
+      run: dotnet pack
+    - name: Publish with NuGet
+      run: nuget push NuGet.Example -Source Artifactory
+      working-directory: ./src/BCT.GHActions.NuGet.Example/bin/Debug
