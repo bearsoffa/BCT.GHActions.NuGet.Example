@@ -26,6 +26,7 @@ jobs:
       working-directory: ./src
     - name: Pack with dotnet
       run: dotnet pack
+      working-directory: ./src
     - name: Publish with NuGet
       run: nuget push NuGet.Example -Source Artifactory
       working-directory: ./src/BCT.GHActions.NuGet.Example/bin/Debug
