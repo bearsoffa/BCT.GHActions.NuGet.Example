@@ -19,10 +19,10 @@ jobs:
       run: dotnet build --configuration Release
       working-directory: ./src
     - name: Add Artifactory nuget
-      run: nuget sources Add -Name Artifactory -Source https://tbctdevops.jfrog.io/tbctdevops/api/nuget/nuget -username ${{ secrets.artifactory_username }} -password ${{ secrets.artifactory_password }}
+      run: nuget sources Add -Name Artifactory -Source https://tbctdevops.jfrog.io/tbctdevops/api/nuget/nuget -username ${{ secrets.artifactory_username }} -password ${{ secrets.artifactory_apikey }}
       working-directory: ./src
     - name: Set Artifactory nuget API key
-      run: nuget setapikey ${{ secrets.artifactory_username }}:${{ secrets.artifactory_password }} -Source Artifactory
+      run: nuget setapikey ${{ secrets.artifactory_username }}:${{ secrets.artifactory_apikey }} -Source Artifactory
       working-directory: ./src
     - name: Pack with dotnet
       run: dotnet pack
