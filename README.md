@@ -27,6 +27,7 @@ Simply clone this repository
 On your **GitHub** account, in the repository's ***Settings*** section find the ***Secrets*** sub-section and make sure to fill out the following information:
 
  - *artifactory_username* - your artifactory username (usually, your e-mail address)
- - *artifactory_password* - your artifactory password
+ - *artifactory_password* - your artifactory apikey (generate in artifactory profile)
+ - *artifactory_apikey* - your artifactory apikey (generate in artifactory profile)
 
 Now, every time you commit into master or any other branch this pipeline will be launched and you will be able to observe its results using the **Actions** link on your repisitory's page.
