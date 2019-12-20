@@ -14,9 +14,12 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.2.108
+        dotnet-version: 3.0.100
     - name: Build with dotnet
       run: dotnet build --configuration Release
+      working-directory: ./src
+    - name: dotnet test
+      run: dotnet test 
       working-directory: ./src
     - name: Add Artifactory nuget
       run: nuget sources Add -Name Artifactory -Source https://tbctdevops.jfrog.io/tbctdevops/api/nuget/nuget -username ${{ secrets.artifactory_username }} -password ${{ secrets.artifactory_apikey }}
