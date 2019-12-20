@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCT.GHActions.NuGet.Example", "BCT.GHActions.NuGet.Example\BCT.GHActions.NuGet.Example.csproj", "{6121B8E4-3AE6-4845-B0C4-1F632FD33C92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BCT.GHActions.NuGet.Example", "BCT.GHActions.NuGet.Example\BCT.GHActions.NuGet.Example.csproj", "{6121B8E4-3AE6-4845-B0C4-1F632FD33C92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCT.GHActions.UnitTests", "BCT.GHActions.UnitTests\BCT.GHActions.UnitTests.csproj", "{9BA9A208-6C00-4661-BAE7-18C8C2C524F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6121B8E4-3AE6-4845-B0C4-1F632FD33C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6121B8E4-3AE6-4845-B0C4-1F632FD33C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6121B8E4-3AE6-4845-B0C4-1F632FD33C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA9A208-6C00-4661-BAE7-18C8C2C524F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA9A208-6C00-4661-BAE7-18C8C2C524F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA9A208-6C00-4661-BAE7-18C8C2C524F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA9A208-6C00-4661-BAE7-18C8C2C524F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

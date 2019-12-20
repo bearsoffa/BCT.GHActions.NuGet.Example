@@ -18,6 +18,9 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
       working-directory: ./src
+    - name: dotnet test
+      run: dotnet test 
+      working-directory: ./src
     - name: Add Artifactory nuget
       run: nuget sources Add -Name Artifactory -Source https://tbctdevops.jfrog.io/tbctdevops/api/nuget/nuget -username ${{ secrets.artifactory_username }} -password ${{ secrets.artifactory_apikey }}
       working-directory: ./src
