@@ -1,0 +1,38 @@
+name: master net core
+
+on: 
+    push:
+        branches:
+            - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install nuget
+      run: sudo apt install nuget
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.100
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+      working-directory: ./src
+    - name: dotnet test
+      run: dotnet test 
+      working-directory: ./src
+    - name: Add Artifactory nuget
+      run: nuget sources Add -Name Artifactory -Source https://tbctdevops.jfrog.io/tbctdevops/api/nuget/nuget -username ${{ secrets.artifactory_username }} -password ${{ secrets.artifactory_apikey }}
+      working-directory: ./src
+    - name: Set Artifactory nuget API key
+      run: nuget setapikey ${{ secrets.artifactory_username }}:${{ secrets.artifactory_apikey }} -Source Artifactory
+      working-directory: ./src
+    - name: Pack with dotnet
+      run: dotnet pack
+      working-directory: ./src
+    - name: Publish with NuGet
+      run: nuget push NuGet.Example.1.0.0.nupkg -Source Artifactory
+      working-directory: ./src/BCT.GHActions.NuGet.Example/bin/Debug
