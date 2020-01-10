@@ -19,9 +19,9 @@ jobs:
       with:
         dotnet-version: 3.0.100
     -name: build with the script
-      shell: pwsh
       run: |
         ./ci/build.ps1
+      shell: pwsh
     #- name: Build with dotnet
     # run: dotnet build --configuration Release
     #  working-directory: ./src
