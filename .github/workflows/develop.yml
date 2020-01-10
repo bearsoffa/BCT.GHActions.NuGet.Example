@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.0.100
-    -name build with the script
+    -name: build with the script
       shell: pwsh
       run: |
         ./ci/build.ps1
