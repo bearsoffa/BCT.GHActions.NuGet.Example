@@ -22,9 +22,7 @@ jobs:
       run: |
         ./ci/build.ps1
       shell: pwsh
-    #- name: Build with dotnet
-    # run: dotnet build --configuration Release
-    #  working-directory: ./src
-    - name: dotnet test
-      run: dotnet test 
-      working-directory: ./src
+    - name: test with the script
+      run: |
+        ./ci/test.ps1
+      shell: pwsh      
